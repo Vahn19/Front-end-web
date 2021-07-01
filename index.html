@@ -1,0 +1,326 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #ffd700;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
+
+        .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+            position: relative;
+            opacity: 0.95;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .bgimg-1 {
+            background-image: url("paralax1.jpg");
+            min-height: 100%;
+        }
+
+        .bgimg-2 {
+            background-image: url("paralax2.jpg");
+            min-height: 500px;
+        }
+
+        .bgimg-3 {
+            background-image: url("paralax3.jpg");
+            min-height: 400px;
+        }
+
+        .bgimg-4 {
+            background-image: url("paralax4.jpg");
+            min-height: 400px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+
+        #mainPage {
+            display: none;
+            text-align: center;
+        }
+
+        .checked {
+            color: #ffd700;
+        }
+
+        /* Navbar
+
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+            padding-top: 60px;
+        }
+        */
+    </style>
+
+    <title>Portfolio</title>
+</head>
+<body style="background-color: black;">
+    <div id="loader" ></div>
+
+    <div id="mainPage" style="display:none" class="animate-bottom">
+        <div class="bgimg-1">
+            <div class="caption" style="top: 25%; color: white;">
+                <span class="border">MY PORTFOLIO</span>
+                <div class="w3-bar " style="padding-top: 20px;color: white;">
+                    <img src="profile2.png" style="height: 200px;">
+                </div>
+                <h2>Ammar Permady A</h2>
+                <p>Software Developer</p>
+            </div>
+        </div>
+
+        <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <!--
+            <div id="navbar">
+                <a class="active" href="javascript:void(0)">Home</a>
+                <a href="javascript:void(0)">News</a>
+                <a href="javascript:void(0)">Contact</a>
+            </div>
+        -->
+            <h3 style="text-align:center;">About Me</h3>
+            <p>Software Developer Internee with training and experience in C/C++ and Web programming. Knowledgeable in wide range of development languages and methodologies. Bright critical thinker with proven 
+                talent for learning quickly in results-oriented environment.
+            </p>
+            <a href="#contact" class="w3-hover-text-amber">Contact Me Here <i class="fa fa-envelope"></i></a>
+        </div>
+
+        <div class="bgimg-2">
+            <div class="caption" style="color: white;top:20%;">
+                <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">SKILL</span>
+            <!--    <h2>WEB PROGRAMMING</h2>
+                <span class="fa fa-circle checked"></span>
+                <span class="fa fa-circle checked"></span>
+                <span class="fa fa-circle checked"></span>
+                <span class="fa fa-circle checked"></span>
+                <span class="fa fa-circle"></span>
+            -->
+                <div class="w3-row" style="padding-top: 20px;" id="skill">
+            <!--        <div class="w3-col s6 w3-center">
+                        <h3 style="color: gold;">Programming Skill</h3>
+                        <p>Java/C/C++</p>
+                        <p>Visual Basic</p>
+                        <p>Web Programming</p>
+                        <p>Software Development</p>
+                        <p>SQL</p>
+                    </div>
+                    <div id="language" class="w3-col s6 w3-center">
+                        <h3 style="color: gold;">Language Skill</h3>
+                        <p>Indonesian</p>
+                        <p>English</p>
+                        <p>Japanese</p>
+                    </div>
+            -->
+                </div>
+            </div>
+        </div>
+
+        <div style="position:relative;">
+            <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+                <h2>EDUCATION</h2>
+                <h3 style="color: gold;padding-top: 10px;">Bachelor of Science in Information Technology</h3>
+                <p>President University - Cikarang (<i>2017/08 - Now</i>)</p>
+            </div>
+        </div>
+
+        <div class="bgimg-3">
+            <div class="caption" style="top: 30%; color: white;">
+                <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">WORK HISTORY</span>
+                <h3 style="color: gold;padding-top: 30px;">Software Developer Intern</h3>
+                <p>RSD Gunung Jati - Cirebon (<i>2020/09 - 2021/01</i>)</p>
+            </div>
+        </div>
+
+        <div style="position:relative;">
+            <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+                <p>Job Descriptions : </p>
+                <li>Prepare and submit reports and other documentations to assist team member's development.</li> 
+                <li>Collaborate effectively with members of software development team personnel in other departments.</li> 
+                <li>Reviewed projects for compliance with specifications and quality standards.</li>    
+            </div>
+        </div>
+
+        <div class="bgimg-4">
+            <div class="caption" id="contact" style="top: 40%;">
+                <span class="border">CONTACT ME</span>
+                <div class="w3-bar" style="padding-top: 20px;color: white;">
+                    <a href="https://github.com/Vahn19" class="w3-button w3-xlarge w3-hover-amber"><i class="fa fa-github"></i></a>
+                    <a href="https://gitlab.com/Vahn19" class="w3-button w3-xlarge w3-hover-amber"><i class="fa fa-gitlab"></i></a>
+                    <a href="https://www.facebook.com/ammar.permadi" class="w3-button w3-xlarge w3-hover-amber"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://t.me/Vahn19" class="w3-button w3-xlarge w3-hover-amber"><i class="fa fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var loadingTime;
+        let log = "";
+
+        const dataDiri = {
+            name: "Ammar Permady A",
+            age: 22,
+            skills: [
+                {type: "Programming", skill:["Visual Basic","Web Programming", "Java/C/C++", "Software Development", "SQL"]},
+                {type: "Language", skill:["Indonesian", "English", "Japanese"]}
+            ]
+        }
+
+        $(document).ready(function(){
+
+            //Landing page animation
+            loadingTime = setTimeout(function(){
+                $('#loader').hide();
+                $('#mainPage').fadeIn(500);
+            }, 3000);
+
+            //Navigation with scroll animation
+            $("a").on('click', function(event){
+                if(this.hash !== ""){
+                    event.preventDefault();
+                    var hash = this.hash;
+
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1500, function(){
+                        window.location.hash = hash;
+                    })
+                }
+            });
+
+            //Display data from nested object
+            for(let i in dataDiri.skills){
+                log += '<div class="w3-col s6 w3-center">'
+                log += '<h3 style="color: gold;">' + dataDiri.skills[i].type + '</h3>';
+                
+                for(let j in dataDiri.skills[i].skill){
+                    log += '<p>' + dataDiri.skills[i].skill[j] + '</p>'
+                }
+                log += '</div>'         
+            }
+
+            document.getElementById("skill").innerHTML = log;
+        })
+        
+
+        
+        /*
+        scroll function
+
+        $(window).bind('scroll', function(){
+            if ($(window).scrollTop() >= 800) {
+                $('#navbar').addClass("sticky");
+            } else {
+                $("#navbar").removeClass('sticky');
+            }
+        });
+        */
+
+        /*
+        function loadingScreen(){
+            loadingTime = setTimeout(showPage, 3000);
+        }
+
+        function showPage(){
+            document.getElementById("loader").style.display="none";
+            document.getElementById("mainPage").style.display="block";
+        }
+        */
+    </script>
+</body>
+</html>
